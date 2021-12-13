@@ -1,0 +1,44 @@
+.navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.logo {
+    margin: 2rem 7rem 1.5rem;
+}
+
+.nav-btn {
+    color: white;
+    width: 13rem;
+    height: 2.5rem;
+    background-color: #56CCF2;
+    border: none;
+    border-radius: .3rem;
+    padding-left: 1.5rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: .4s;
+    transform-origin: 0 100%;
+}
+
+.btn2 {
+    margin-top: .5rem;
+}
+
+.nav-btn img {
+    filter: invert(100%);
+    width: 1rem;
+    height: 1rem;
+    margin-right: .5rem;
+    
+}
+
+.activated {
+    background-color: #4ba0f0;
+}
+
+.nav-btn:hover {
+    -webkit-transform: skew(-10deg);
+    transform: skew(-10deg);
+}

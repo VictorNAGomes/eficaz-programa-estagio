@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <title>Programa Estágio</title>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./assets/styles/global.css">
+        <link rel="stylesheet" href="./assets/styles/navbar.css">
+        <link rel="stylesheet" href="./assets/styles/register.css">
+        <link rel="stylesheet" href="./assets/styles/list.css">
+    </head>
+    <body>
+        <a href="./index.html"><img class="logo" src="./assets/images/logo-black.png" alt="Eficaz Logo"></a>
+        <div class="container flex">
+            <nav class="navbar">
+                <button id="btn1" class="nav-btn flex activated" onclick="invisible(this)" disabled>
+                    <img src="./assets/images/add-people.svg" alt="Cadastro">
+                    Cadastro
+                </button>
+                <button id="btn2" class="nav-btn flex btn2" onclick="invisible(this)">
+                    <img src="./assets/images/people.svg" alt="lista de cadastrados">
+                    Lista de Cadastrados
+                </button>
+            </nav>
+            <div id="register" class="content flex">
+                <h1 class="register-h1">CADASTRO</h1>
+                <form id="form" class="forms flex">
+                    <div class="grid-container">
+                        <div class="input-div">
+                            <label for="seu_email">E-mail pessoal do candidato</label>
+                            <input id="seu_email" type="email" placeholder="Ex: email@example.com" required />
+                        </div>
+                        <div class="input-div">
+                            <label for="nome">Nome completo</label>
+                            <input id="nome" type="text" placeholder="Ex: José da Silva" required />
+                        </div>
+                        <div class="input-div">
+                            <label for="email">E-mail</label>
+                            <input id="email" type="email" placeholder="Ex: email@example.com" required />
+                        </div>
+                        <div class="input-div">
+                            <label for="telefone">Telefone (DDD)</label>
+                            <input id="telefone" type="text" placeholder="Ex: (14) 99712-7654" maxlength="15" onkeyup="phoneMask()" required />
+                        </div>
+                        <div class="input-div">
+                            <label for="rua">Rua</label>
+                            <input id="rua" type="text" placeholder="Ex: Av. João de souza" required />
+                        </div>
+                        <div class="input-div">
+                            <label for="numero">N.°</label>
+                            <input id="numero" type="text" placeholder="Ex: 123" onkeyup="numberMask()" required />
+                        </div>
+                        <div class="input-div">
+                            <label for="complemento">Complemento</label>
+                            <input id="complemento" type="text" placeholder="Ex: Casa" />
+                        </div>
+                        <div class="input-div">
+                            <label for="bairro">Bairro</label>
+                            <input id="bairro" type="text" placeholder="Ex: Parati" />
+                        </div>
+                        <div class="input-div">
+                            <label for="cep">CEP</label>
+                            <input id="cep" type="text" maxlength="9" placeholder="Ex: 17589-765" onkeyup="cepMask()" required />
+                        </div>
+                        <div class="last-line input-div flex">
+                            <div class="last-input input-city flex">
+                                <label for="cidade">Cidade</label>
+                                <input class="city" id="cidade" type="text" placeholder="Ex: Marília" required />
+                            </div>
+                            <div class="last-input input-uf flex">
+                                <label for="uf">UF</label>
+                                <input class="uf" id="uf" type="text" maxlength="2" placeholder="Ex: SP" onkeyup="ufMask()" required />
+                            </div>
+                        </div>
+                        <p id="err"></p>
+                    </div>
+                    <div class="button flex">
+                        <button id="form-btn" onclick="register()">Cadastrar</button>
+                    </div>
+                </form>
+            </div>
+            <div id="list" class="content flex invisible">
+                <h3>Lista de cadastrados</h3>
+                <div class="filters flex">
+                    <h1>FILTROS</h1>
+                </div>
+                <table cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th class="first">Nome</th>
+                            <th>E-mail</th>
+                            <th>Endereço Completo</th>
+                            <th>Telefone</th>
+                            <th class="last">Ação</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody"></tbody>
+                </table>
+            </div>
+        </div>
+        <script src="./assets/scripts/index.js"></script>
+        <script src="./assets/scripts/masks.js"></script>
+        <script src="./assets/scripts/register.js"></script>
+        <script src="./assets/scripts/list.js"></script>
+        <script src="./assets/scripts/delete.js"></script>
+        <script src="./assets/scripts/update.js"></script>
+    </body>
+</html>
